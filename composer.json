@@ -1,0 +1,19 @@
+{
+    "name": "arpablue/field-list",
+    "description": "It is a object to mange a value using a key, but identify each value using uncase-sensitive key. This allow get values using case un-sensitive methods and compare both list, using a strict mode for a exactly comparation of the keys and values, an compare mode only verify the current keys and values aexist in the second luist and the low mode only verify the keys exists in the second list.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "ArpaBlue\\FieldList\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Augusto Flores",
+            "email": "eng.aug.flores@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
