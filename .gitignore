@@ -1,6 +1,7 @@
 vendor/
 .idea/
 *.iml
+build.bat
 logs/
 !/logs/empty
 /app.php
