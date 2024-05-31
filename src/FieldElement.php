@@ -44,11 +44,11 @@ class FieldElement
     public function toJSON(){
         $name = $this->getName();
         if( $name == null ){ return null; }
-        $res = "{\"name\":\"" .$name . "\",\"value\":";
+        $res = "{\"" . $name . "\":";
         $value = $this->getValue();
         if( $value === null ){
-            $res = $res . "null";
-            return res;
+            $res = $res . "null}";
+            return $res;
         }
         if( gettype( $value ) == 'string'){
             $res = $res . "\"" . $value . "\"}";
@@ -73,7 +73,6 @@ class FieldElement
         $this->_Key = StringTools::setOnFormat( $text );
         return true;
     }
-
     /**
      * It specify the name of the current field.
      * @param $name string It is the name of the field.
@@ -104,7 +103,7 @@ class FieldElement
     public function getValue() { return $this->_Value; }
 
     /**
-     * It return the key that identify to the field.
+     * It return the key that identify to the field. It is updated each time the name of the field change it.
      * @return string|null It is the key of the field.
      */
     public function getKey(){ return $this->_Key; }
@@ -118,14 +117,14 @@ class FieldElement
         if( ( $fieldName == null ) && ( $this->getKey() == null )) { return true; }
         if( $fieldName == null) { return false; }
         if( $this->getKey() == null) { return false; }
-        return ($this->getKey() === StringTools::setOnFormat( $fieldName ));
+        return ($this->getKey() == StringTools::setOnFormat( $fieldName ));
     }
     /**
      * It verify the current element is the same than another element, has the same name and the same value.
      * @param $fieldElement FieldElement It is the another element to compare.
      * @return bool It is true then both element are equal.
      */
-    public function equal( $fieldElement ){
+    public function equalTo($fieldElement ){
         if( !FieldElement::isThisClass( $fieldElement ) ) {
             return false;
         }
@@ -149,7 +148,7 @@ class FieldElement
      * @param $fieldElement FieldElement It is the another object to compare the names.
      * @return bool It is true both objects has the same name.
      */
-    public function compare( $fieldElement )
+    public function compareTo( $fieldElement )
     {
         if (!FieldElement::isThisClass($fieldElement)) {
             return false;
@@ -168,7 +167,8 @@ class FieldElement
         if (!FieldElement::isThisClass( $target )) {
             return false;
         }
-        $this->setName( $target->getName() );
+        $this->_Name = $target->getName();
+        $this->_Key = $target->getKey();
         $this->setValue( $target->getValue() );
         return true;
     }

@@ -29,6 +29,6 @@ class Test_Case extends TestCase
      */
     protected function tearDown(): void {
         parent::tearDown();
-        write("====================================");
+        write("\n====================================\n");
     }
 }
