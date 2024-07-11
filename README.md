@@ -182,18 +182,18 @@ It return an array with the names of all the fields.
 *$**names** = $**list**->**getNames**();*
 
 *print_r( $**names** );*
-*/* Ouput:*
-*<span style="color:gray">Array*
-    *(*
-        *[0] => name*
-        *[1] => lastname*
-        *[2] => email*
-        *[3] => age*
-        *[4] => phone*
-        *[5] => country*
-        *[6] => language*
-    *)*
-**/</span>*
+/* Ouput:
+*<span style="color:gray">Array</span>*
+    *<span style="color:gray">(</span>*
+        *<span style="color:gray">[0] => name</span>*
+        *<span style="color:gray">[1] => lastname</span>*
+        *<span style="color:gray">[2] => email</span>*
+        *<span style="color:gray">[3] => age</span>*
+        *<span style="color:gray">[4] => phone</span>*
+        *<span style="color:gray">[5] => country</span>*
+        *<span style="color:gray">[6] => language</span>*
+    *<span style="color:gray">)</span>*
+*/
 
 ### exists()
 

@@ -58,7 +58,6 @@ class FieldElement
         $res = $res . $value."}";
         return $res;
     }
-
     /**
      * It specify the key used to identify the current field. If the key cannot be generated then
      * a null value is assigned as key.
@@ -81,7 +80,6 @@ class FieldElement
         $this->_Name = $name;
         $this->setKey( $name );
     }
-
     /**
      * It set the value assigned to the current field.
      * @param $value any It is the value assigned to the current field.
@@ -89,19 +87,16 @@ class FieldElement
     public function setValue( $value ){
         $this->_Value = $value;
     }
-
     /**
      * It return the name of the field.
      * @return string It is the name of th field.
      */
     public function getName(){ return $this->_Name; }
-
     /**
      * It return the value assigned to the current field.
      * @return any It is the value assigned to the field.
      */
     public function getValue() { return $this->_Value; }
-
     /**
      * It return the key that identify to the field. It is updated each time the name of the field change it.
      * @return string|null It is the key of the field.
@@ -133,7 +128,6 @@ class FieldElement
         }
         return ( $this->getValue() === $fieldElement->getvalue() );
     }
-
     /**
      * It verify the target parameter is a FieldList class implementation.
      * @param $target any It is the method to verify that is a instance of FieldElement.
@@ -142,7 +136,6 @@ class FieldElement
     public static function isThisClass( $target ){
         return ClassTools::isThisClass("FieldElement", $target);
     }
-
     /**
      * It verify if bot objects has the same name, the value can be different.
      * @param $fieldElement FieldElement It is the another object to compare the names.
@@ -155,7 +148,6 @@ class FieldElement
         }
         return ($this->getKey() === $fieldElement->getKey());
     }
-
     /**
      * It copy the data of the target element, it replace the current values
      * by the target objects, if the target object is null or is another element
@@ -172,7 +164,6 @@ class FieldElement
         $this->setValue( $target->getValue() );
         return true;
     }
-
     /**
      * It return a object different to the current object but with the same data
      * of the current object.

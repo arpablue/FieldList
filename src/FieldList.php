@@ -12,7 +12,6 @@ namespace ArpaBlue\FieldList;
 class FieldList
 {
     private $_Fields;
-
     /**
      * FieldList constructor.
      */
@@ -21,7 +20,6 @@ class FieldList
         $this->_Fields = array();
     }
     ////////////////////////// STATIC METHODS ///////////////////////////////
-
     /**
      * It verify the target parameter is a FieldList class implementation.
      * @param $target any It is the method to verify that is a instance of FieldElement.
@@ -31,15 +29,12 @@ class FieldList
     {
         return ClassTools::isThisClass("FieldElement", $target);
     }
-
     ////////////////////////// Override method /////////////////////////////
-
     public function __toString()
     {
         return $this->toJSON();
     }
     ///////////////////////// Local methods //////////////////////////////////
-
     /**
      * It verify a string is not null or only white string.
      * @param $target string It is the string to be evaluate if is a valid .
@@ -56,7 +51,6 @@ class FieldList
         }
         return true;
     }
-
     /**
      * It return the contain of the list in a JSON format. If the list is empty them return a {} in the fields
      * attribute.
@@ -77,7 +71,6 @@ class FieldList
 
         return $res;
     }
-
     /**
      * It set a value to a key in the list, if the key not exists then the element is didn't
      * add to the list.
@@ -99,7 +92,6 @@ class FieldList
         $field->setValue($value);
         return true;
     }
-
     /**
      * It set a value to a key in the list, if the key not exists then the element is
      * added to the list.
@@ -121,7 +113,6 @@ class FieldList
         $this->_Fields[] = $element;
         return true;
     }
-
     /**
      * It return an array with the names of the values as the key and the values of the fields.
      * @return array It is the arrays of fields.
@@ -134,7 +125,6 @@ class FieldList
         }
         return $res;
     }
-
     /**
      * It return the quantity of elements in the list.
      * @return int It is the quntity of elements of the list.
@@ -146,7 +136,6 @@ class FieldList
         }
         return count($this->_Fields);
     }
-
     /**
      * It verify if a key exists in the list.
      * @param $name string It is the key to search in the list.
@@ -157,7 +146,6 @@ class FieldList
         $pos = $this->getIndex($name);
         return $pos >= 0;
     }
-
     /**
      * It return the index of field with a name if the field not exists then return -1.
      * @param $name string It is the name of the field.
@@ -178,7 +166,6 @@ class FieldList
         }
         return -1;
     }
-
     /**
      * It return a value using the position of the field int he list, if the field
      * doesn't exist in the position specified then  return null.
@@ -193,7 +180,6 @@ class FieldList
         }
         return $field->getValue();
     }
-
     /**
      * It return a field according to a position in the list, if in the position specified by the index not found a
      * field then a null value is returned.
@@ -217,7 +203,6 @@ class FieldList
         }
         return null;
     }
-
     /**
      * It return the value assigned value to a key, if the key not exist then return the null value.
      * @param $key string It is the key to get the assigned value.
@@ -231,7 +216,6 @@ class FieldList
         }
         return $field->getValue();
     }
-
     /**
      * It return the array of fileds of the list.
      * @return array It is the array if filed used in the list.
@@ -260,7 +244,6 @@ class FieldList
         }
         return null;
     }
-
     /**
      * It remove all elements of the list.
      */
@@ -268,7 +251,6 @@ class FieldList
     {
         $this->_Fields = array();
     }
-
     /**
      * It remove a element with the key specified from  the list.
      * @param $key string It is th element to be removed.
@@ -298,7 +280,6 @@ class FieldList
         }
         return true;
     }
-
     /**
      * It copy the values of the fields in the current list form another list, it doesn't add new fields,
      * if a value of the another list return a null value then the current value of that field is not modified.
@@ -355,7 +336,6 @@ class FieldList
         }
         return $res;
     }
-
     /**
      * It return a clone with all data of the current list,
      * the elements are clones too.
@@ -367,7 +347,6 @@ class FieldList
         $res->copyAll($this);
         return $res;
     }
-
     /**
      * It compare the current list have the same number of fields, the same names and values for each field.
      * @param $list FieldList It is the list to be compared.
@@ -394,7 +373,6 @@ class FieldList
         }
         return true;
     }
-
     /**
      * It compare the fields of the current object with the fields in the target objects,
      * it verified the fields exist and the value are the same, if the target have more fields
@@ -419,7 +397,6 @@ class FieldList
         }
         return true;
     }
-
     /**
      * It verify the fields of the current list exists in the target list, the values
      * are not evaluated.

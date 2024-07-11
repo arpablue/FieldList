@@ -6,3 +6,6 @@ logs/
 !/logs/empty
 /app.php
 
+index.php
+spitch.php
+test.bat
